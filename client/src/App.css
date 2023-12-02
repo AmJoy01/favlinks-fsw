@@ -1,0 +1,27 @@
+
+th, td{
+  width: 500px;
+  text-align: left;
+  border-bottom: 1px solid rgb(163, 163, 163);
+  padding: 10px 0;
+}
+
+.input {
+  display: grid;
+  width: 45%;
+}
+
+
+.button {
+  padding: 5px 10px;
+  color: white;
+  background-color: rgb(71, 109, 214);
+  border-radius: 10%;
+  border: rgb(71, 109, 214) solid;
+}
+
+.button:hover {
+  background-color: rgb(94, 126, 214);
+  border: rgb(94, 126, 214) solid;
+  cursor: pointer;
+}
