@@ -20,10 +20,24 @@ function Form(props){
    const submitForm = (e) =>{
     e.preventDefault()
     const newLinkData = {name:name, url:url}
-    props.onNewData(newLinkData)
-    setName("")
-    setUrl("")
-   }
+    // props.onNewData(newLinkData)
+    // setName("")
+    // setUrl("")
+    fetch('/api/links', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newLinkData),
+    })
+    .then(response => response.json())
+    .then(addedLink => {
+        props.onNewData(addedLink)
+        setName("")
+        setUrl("")
+    })
+    .catch(error => console.error('Error adding link: ', error))
+    }
     return (
         <form onSubmit={submitForm}>
             <label htmlFor="linkName">Name</label>
